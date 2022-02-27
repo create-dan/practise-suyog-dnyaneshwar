@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Nunito:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Nunito:wght@900&family=Roboto+Serif:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&family=Merriweather:wght@900&family=Nunito:wght@900&family=Roboto+Serif:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+body{
+    background-color: #090a0a;
+    font-family: 'Roboto Serif', sans-serif;
+}
+
+:root{
+    --main-bg: #1e272e;
+    --main-color: #0097e6;
+
+}
+
+.row{
+    margin-top: 0;
+}
+
+
+
+.main-menu{
+    
+    background-color: black;
+}
+
+.navbar{
+    color: #fff;
+    
+    background-color: black;
+
+ 
+}
+
+.navbar a{
+    color: white;
+    font-size: 1.3rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+.navbar li{
+    margin: 9px;
+}
+
+.navbar li a:hover{
+    transition: 0.5s;
+    color: rgba(11, 190, 235, 0.966);
+    text-decoration: underline;
+}
+
+
+
+.navbar-toggler{
+   
+    /* background-color: white; */
+
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: lightgreen;
+}
+
+
+.navbar-expand-md .navbar-toggler{display: block !important;}
+
+.clubName{
+    /* font-family: 'Berkshire Swash', cursive; */
+    transition: all linear;
+    animation: change 3s linear infinite;
+    color: blue;
+    
+
+    
+}
+
+
+.mainHeading{
+    font-family: 'Roboto Serif', sans-serif;
+}
+
+@keyframes change {
+
+    0%{
+       
+        color: rgb(14, 230, 60);
+    }
+    100%{
+       
+        color: rgb(199, 123, 8);
+    }
+    
+}
+
+.fa-snowflake{
+    transition: all linear;
+    animation: rotate 2s linear infinite;
+    color: rgb(189, 230, 8);
+}
+
+@keyframes rotate {
+
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+
+.heading{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: wheat;
+}
+
+
+
+
+/* card css */
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Iceland&display=swap");
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+:root {
+  --card-height: 65vh;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+
+.card-nb {
+    background: #191c29;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 10px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    position: relative;
+    border-radius: 6px;
+    font-size: 1.5em;
+    color: rgb(88 199 250 / 0%);
+    cursor: pointer;
+  }
+  .card-nb::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate),
+      #5ddcff,
+      #3c67e3 43%,
+      #4e00c2
+    );
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+  }
+  .card-nb::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate),
+      #5ddcff,
+      #3c67e3 43%,
+      #4e00c2
+    );
+    opacity: 1;
+    transition: opacity 0.5s;
+    animation: spin 2.5s linear infinite;
+  }
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+  .card-nb p:nth-child(1) {
+    word-break: break-all;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: "Baloo Chettan 2", cursive;
+  }
+  .card-nb:hover p:nth-child(1) {
+    animation: glow 1.5s ease-in-out infinite alternate;
+  }
+  p:nth-child(2) a {
+    font-size: 1em;
+    color: #228dff;
+    text-decoration: none;
+    transition: all 0.5s;
+    font-family: Iceland;
+  }
+  p:nth-child(2) a:hover {
+    animation: glow 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    from {
+      text-shadow: 0px 0px 5px #fff, 0px 0px 5px #614ad3;
+    }
+    to {
+      text-shadow: 0px 0px 20px #fff, 0px 0px 20px #614ad3;
+    }
+  }
+
+/* quote */
+
+.quote{
+    background-color: #0097e6;
+}
+
+
+
+
+
+
+
+
+  /* social icons css */
+
+.socialCircle{
+    border-radius: 30%;
+    /* background-color: white; */
+}
+ 
+
+
